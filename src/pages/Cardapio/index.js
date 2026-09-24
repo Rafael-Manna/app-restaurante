@@ -16,7 +16,7 @@ const CARDAPIO = [
     { id: 7, nome: 'Água Mineral', preco: 4.0, tipo: 'Bebida' },
 ];
 
-export default function Cardapio({ irParaCarrinho }) {
+export default function Cardapio({ irParaCarrinho, irParaGerenciar }) {
     // Pego os dados do carrinho pelo contexto.
     const { itens, adicionar } = useCarrinho();
 
@@ -46,6 +46,11 @@ export default function Cardapio({ irParaCarrinho }) {
             <CustomButton
                 title={`Ver Carrinho (${quantidadeTotal})`}
                 onPress={irParaCarrinho}
+            />
+
+            <CustomButton
+                title="Gerenciar Cardápio"
+                onPress={irParaGerenciar}
             />
         </View>
     );
